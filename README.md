@@ -1,6 +1,8 @@
 
 > [!NOTE]
 > A configuração atual está focada no processamento de arquivos `.js`.
+> O carregamento dos arquivos no momento está separando-os por Controller e não por View, ou seja, os arquivos estão sendo carregados em todas as Views de um mesmo Controller.
+
 
 # Configuração do Webpack com .NET MVC
 
