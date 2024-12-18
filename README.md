@@ -1,9 +1,11 @@
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
+> [!ATENÇÃO]
+> Este guia contém instruções essenciais para configurar o Webpack com .NET MVC. Siga cuidadosamente para evitar problemas na integração.
 
 # Configuração do Webpack com .NET MVC
 
 Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript de forma eficiente.
+
+---
 
 ## Estrutura de Arquivos
 
@@ -11,15 +13,22 @@ Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquiv
 - `./package.json`
 - `./webpack.config.js`
 
+---
+
 ## Configuração de Pastas
 
-A configuração atual está focada no processamento de arquivos `.js`. Para começar a utilizar, siga os passos abaixo:
+A configuração atual está focada no processamento de arquivos `.js`. Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abaixo:
 
-1. Crie uma pasta chamada `Src` na raiz do projeto.
-2. Dentro de `Src`, crie uma subpasta chamada `js` para organizar os arquivos JavaScript.
-3. Cada pasta dentro de `js` representará os arquivos associados a um controller do projeto.
+1. **Crie a estrutura básica de pastas:**
+   - Na raiz do projeto, crie uma pasta chamada `Src`.
+   - Dentro da pasta `Src`, crie uma subpasta chamada `js`. Esta pasta será usada para organizar os arquivos JavaScript.
 
-### Exemplo de Estrutura
+2. **Organize os arquivos por controller:**
+   - Cada subpasta dentro de `js` deve corresponder a um controller do projeto.
+
+---
+
+### Exemplo de Estrutura de Pastas
 
 ```plaintext
 ./Controllers/HomeController.cs
@@ -28,10 +37,28 @@ A configuração atual está focada no processamento de arquivos `.js`. Para com
 ./Controllers/UsuarioController.cs
 ./Src/js/Usuario/Cadastro.js
 ./Src/js/Usuario/Login.js
+```
 
-# Instalar as dependências do projeto
-npm i
+---
 
-# Iniciar o servidor do Webpack
+## Instalação e Configuração
+
+### Passo 1: Instalar Dependências
+
+Execute o comando abaixo para instalar as dependências do projeto:
+
+```bash
+npm install
+```
+
+### Passo 2: Iniciar o Servidor do Webpack
+
+Use o comando abaixo para iniciar o servidor de desenvolvimento do Webpack:
+
+```bash
 npm start
+```
 
+---
+
+Com essa configuração, você poderá gerenciar facilmente seus arquivos JavaScript no projeto .NET MVC.
