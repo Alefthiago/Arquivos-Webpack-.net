@@ -1,5 +1,5 @@
 
-> [!teste]
+> [!NOTE]
 > Useful information that users should know, even when skimming content.
 
 # Configuração do Webpack com .NET MVC
