@@ -1,10 +1,10 @@
 
 > [!NOTE]
-> Useful information that users should know, even when skimming content.
+> A configuração atual está focada no processamento de arquivos `.js`.
 
 # Configuração do Webpack com .NET MVC
 
-Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript de forma eficiente.
+Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript.
 
 ---
 
@@ -18,7 +18,7 @@ Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquiv
 
 ## Configuração de Pastas
 
-A configuração atual está focada no processamento de arquivos `.js`. Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abaixo:
+Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abaixo:
 
 1. **Crie a estrutura básica de pastas:**
    - Na raiz do projeto, crie uma pasta chamada `Src`.
