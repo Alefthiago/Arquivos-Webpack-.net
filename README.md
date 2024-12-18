@@ -25,3 +25,13 @@ A configuração atual está focada no processamento de arquivos `.js`. Para com
 ./Controllers/UsuarioController.cs
 ./Src/js/Usuario/Cadastro.js
 ./Src/js/Usuario/Login.js
+
+### Exemplo de Estrutura
+
+```plaintext
+./Controllers/HomeController.cs
+./Src/js/Home/Relogio.js
+----------------------------------
+./Controllers/UsuarioController.cs
+./Src/js/Usuario/Cadastro.js
+./Src/js/Usuario/Login.js
