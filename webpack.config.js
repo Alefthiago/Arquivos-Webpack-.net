@@ -1,36 +1,43 @@
-﻿//      CARREGANDO PLUGINS.     //
+//      VARIAVEIS.      //
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const glob = require('glob');
 const path = require('path');
-//     /CARREGANDO PLUGINS.     //
+//     /VARIAVEIS.      //
 
-//      FUNÇÃO PARA AGRUPAR OS ARQUIVOS POR PASTA E GERAR UM OBJETO.     //
+//      MAPEAMENTO DOS ARQUIVOS.        //
 function groupEntriesByFolder(pattern) {
-    const entries = {};
-    const files = glob.sync(pattern);
+    let entries = {};
+    let files = glob.sync(pattern);
 
     files.forEach((file) => {
-        const folderName = path.dirname(file).split(path.sep).pop();
+        //console.log(file);
+        let folderName = path.dirname(file).split(path.sep).pop();
+        let fileName = path.basename(file, path.extname(file));
 
         if (!entries[folderName]) {
-            entries[folderName] = [];
+            entries[folderName] = {};
         }
-
-        entries[folderName].push(path.resolve(__dirname, file));
+        entries[folderName][fileName] = path.resolve(__dirname, file);
     });
-
     return entries;
 }
-//     /FUNÇÃO PARA AGRUPAR OS ARQUIVOS POR PASTA E GERAR UM OBJETO.     //
+//     /MAPEAMENTO DOS ARQUIVOS.        //
 
 const groupedEntries = groupEntriesByFolder('./Src/js/**/*.js');
+const flatEntries = Object.keys(groupedEntries).reduce((acc, folder) => {
+    Object.keys(groupedEntries[folder]).forEach((file) => {
+        acc[`${folder}/${file}`] = groupedEntries[folder][file];
+    });
+    return acc;
+}, {});
 
+//console.log(flatEntries);
 module.exports = {
     mode: 'production',
-    entry: groupedEntries,
+    entry: flatEntries,
     output: {
-        filename: '[name]/[name].bundle.js?v=[contenthash]',
+        filename: '[name].bundle.js?v=[contenthash]',
         path: path.resolve(__dirname, './wwwroot/dist/js/'),
     },
     devServer: {
@@ -42,7 +49,7 @@ module.exports = {
         port: 5000,
         open: false,
         devMiddleware: {
-            writeToDisk: (filePath) => filePath.endsWith('.js') || filePath.endsWith('.cshtml'),
+            writeToDisk: (filePath) => filePath.endsWith('.js') || filePath.endsWith('.cshtml'), // Permitir que os arquivos sejam gravados no disco
         },
         proxy: [
             {
@@ -57,7 +64,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         ...Object.keys(groupedEntries).map((folderName) => {
             let outputPath;
-
+            //console.log(folderName);
             if (folderName === 'js') {
                 outputPath = path.resolve(__dirname, './Views/Shared/Components/Webpack/index.cshtml');
             } else {
@@ -66,25 +73,27 @@ module.exports = {
                     `./Views/Shared/Components/Webpack/${folderName}/index.cshtml`
                 );
             }
+            //console.log(outputPath)
             return new HtmlWebpackPlugin({
                 inject: false,
                 templateContent: ({ htmlWebpackPlugin }) => {
-                    const scripts = (htmlWebpackPlugin.files.js || [])
-                        .filter((jsPath) =>
-                            jsPath.includes(`/${folderName}/${folderName}.bundle.js`)
-                        )
-                        .map((jsPath) => {
-                            return `<script src="${jsPath.replace('/wwwroot', '')}"></script>`;
+                    const scripts = Object.keys(groupedEntries[folderName])
+                        .map((fileName) => {
+                            const jsPath = htmlWebpackPlugin.files.js.find((jsPath) =>
+                                jsPath.includes(`/${folderName}/${fileName}.bundle.js`)
+                            );
+
+                            //console.log(jsPath)
+                            if (jsPath) {
+                                return `<script src="${jsPath.replace('/wwwroot', '')}"></script>`;
+                            }
                         })
                         .join('\n');
 
                     return scripts || `<!-- Nenhum script encontrado -->`;
                 },
-                filename: () => {
-                    //console.log(outputPath)
-                    return outputPath;
-                },
+                filename: outputPath,
             });
         }),
-    ]
+    ],
 };
