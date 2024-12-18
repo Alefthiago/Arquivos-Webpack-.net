@@ -1,5 +1,6 @@
-> [!ATENÇÃO]
-> Este guia contém instruções essenciais para configurar o Webpack com .NET MVC. Siga cuidadosamente para evitar problemas na integração.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
 
 # Configuração do Webpack com .NET MVC
 
