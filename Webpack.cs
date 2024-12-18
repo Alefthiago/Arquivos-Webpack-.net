@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApplicationWebPack.Components
 {
@@ -7,12 +7,12 @@ namespace WebApplicationWebPack.Components
     {
         public IViewComponentResult Invoke(string? controller = null)
         {
-            //string? controllerName = ViewContext.RouteData.Values["controller"]?.ToString().Replace("Controller", "");
-            if (controller != "Geral" && !string.IsNullOrWhiteSpace(controller))
+            if (controller != "Geral")
             {
-                return View($"{controller}/index");
+                string? controllerName = ViewContext.RouteData.Values["controller"]?.ToString().Replace("Controller", "");
+                return View($"{controllerName}/index");
             }
-            return View("Index");
+            return View("index");
         }
     }
 }
