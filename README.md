@@ -1,3 +1,6 @@
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
 # Configuração do Webpack com .NET MVC
 
 Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript de forma eficiente.
@@ -26,12 +29,9 @@ A configuração atual está focada no processamento de arquivos `.js`. Para com
 ./Src/js/Usuario/Cadastro.js
 ./Src/js/Usuario/Login.js
 
-### Exemplo de Estrutura
+# Instalar as dependências do projeto
+npm i
 
-```plaintext
-./Controllers/HomeController.cs
-./Src/js/Home/Relogio.js
-----------------------------------
-./Controllers/UsuarioController.cs
-./Src/js/Usuario/Cadastro.js
-./Src/js/Usuario/Login.js
+# Iniciar o servidor do Webpack
+npm start
+
