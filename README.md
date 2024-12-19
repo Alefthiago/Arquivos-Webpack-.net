@@ -29,8 +29,9 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
 
 ---
 
-### Exemplo de Estrutura de Pastas
-
+### Exemplo de Estrutura de Pastas (Estrutura basica do projeto .net MVC sera utilizada como exemplo)
+Conroller: ./Controllers/HomeController.cs
+Views: ./Views/Home/Index.cshtml - ./Views/Home/Privacy.cshtml 
 ```plaintext
 ./Controllers/HomeController.cs
 ./Src/js/Home/Relogio.js
