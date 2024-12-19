@@ -1,16 +1,14 @@
 
 > [!NOTE]
 > A configuração atual está focada no processamento de arquivos `.js`.
-> O carregamento dos arquivos no momento está separando-os por Controller e não por View, ou seja, os arquivos estão sendo carregados em todas as Views de um mesmo Controller.
-
 
 # Configuração do Webpack com .NET MVC
 
-Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript.
+Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript, o objetivo é realizar a transpilação desses arquivos.
 
 ---
 
-## Estrutura de Arquivos
+## Estrutura de Arquivos de Configuração
 
 - `./Components/Webpack.js`
 - `./package.json`
@@ -24,7 +22,7 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
 
 1. **Crie a estrutura básica de pastas:**
    - Na raiz do projeto, crie uma pasta chamada `Src`.
-   - Dentro da pasta `Src`, crie uma subpasta chamada `js`. Esta pasta será usada para organizar os arquivos JavaScript.
+   - Dentro da pasta `Src`, crie uma subpasta chamada `js`. Esta pasta será usada para organizar os arquivos JavaScript de cada View.
 
 2. **Organize os arquivos por controller:**
    - Cada subpasta dentro de `js` deve corresponder a um controller do projeto.
