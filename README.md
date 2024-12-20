@@ -62,7 +62,7 @@ npm install
 
 ### Passo 2: Iniciar o Servidor do Webpack
 
-Use o comando abaixo para iniciar o servidor de desenvolvimento do Webpack:
+Use o comando abaixo para iniciar o servidor de desenvolvimento do Webpack (Se precisar criar mais arquivos na pasta "./Src" sera necessario para o servidor npm e iniciar ele novamente):
 
 ```bash
 npm start
