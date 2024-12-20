@@ -39,13 +39,12 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
    - ./Src/js/Home([Nome da View]())/Index([Nome da Action]())/*.js ([arquivos carregados apenas na view da action Index]())
    - ./Src/js/Home([Nome da View]())/Privacy([Nome da Action]())/*.js` ([arquivos carregados apenas na view da action]())
 ---
+### Importação dos Scripts nas Views
+No seu arquivo "./Views/Shared/_Layout.cshtml" adicione o seguinte código:
 ```plaintext
-./Controllers/HomeController.cs
-./Src/js/Home/Relogio.js
-----------------------------------
-./Controllers/UsuarioController.cs
-./Src/js/Usuario/Cadastro.js
-./Src/js/Usuario/Login.js
+@await Component.InvokeAsync("Webpack", 1)
+@await Component.InvokeAsync("Webpack", 2)
+@await Component.InvokeAsync("Webpack", 3)
 ```
 
 ---
