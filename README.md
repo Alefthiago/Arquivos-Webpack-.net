@@ -42,7 +42,7 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
 ### Importação dos Scripts nas Views
 No seu arquivo "./Views/Shared/_Layout.cshtml" adicione o seguinte código:
 ```plaintext
-<!-- 1 Carrega os arquivos gerais de todas as Views; 2 Carrega os arquivos gerais de cara View; 3 Carrega os arquivos especificos de cada View --> 
+<!-- 1 Carrega os arquivos em todas as Views; 2 Carrega os arquivos em todas as View de um mesmo grupo; 3 Carrega os arquivos especificos de cada View --> 
 @await Component.InvokeAsync("Webpack", 1) 
 @await Component.InvokeAsync("Webpack", 2)
 @await Component.InvokeAsync("Webpack", 3)
