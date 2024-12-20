@@ -3,6 +3,7 @@
 > A configuração atual está focada no processamento de arquivos `.js`.
 
 # Configuração do Webpack com .NET MVC
+<span style="color: red;">Este texto está em vermelho</span>
 
 Este projeto demonstra como integrar o Webpack ao .NET MVC para gerenciar arquivos JavaScript, o objetivo é realizar a transpilação desses arquivos.
 
