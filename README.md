@@ -28,7 +28,6 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
    - Cada subpasta dentro de `js` deve corresponder a um controller do projeto.
 
 ---
----
 ### Exemplo de Estrutura de Pastas Controlador
 1. **HomeController
    - ./Controllers/HomeController.cs
