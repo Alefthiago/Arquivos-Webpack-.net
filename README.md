@@ -29,11 +29,11 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
 
 ---
 ### Exemplo de Estrutura de Pastas Controlador
-1. **HomeController
+1. **HomeController**
    - ./Controllers/HomeController.cs
    - ./Views/Home/Index.cshtml
    - ./Views/Home/Privacy.cshtml 
-2. **Arquivos JavaScript
+2. **Arquivos JavaScript**
    - ./Src/js/*.js (arquivos carregados em todas as páginas)
    - ./Src/js/Home/*.js (arquivos carregados em todas as Views do controller Home)
    - ./Src/js/Home/Index/*.js (arquivos carregados apenas na view da action Index)
