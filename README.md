@@ -35,9 +35,9 @@ Para começar a utilizar o Webpack com seu projeto .NET MVC, siga os passos abai
    - ./Views/Home/Privacy.cshtml 
 2. **Arquivos JavaScript**
    - ./Src/js/*.js ([Arquivos Carregados em Todas as Páginas]())
-   - ./Src/js/Home([Nome da View]())/*.js (Arquivos carregados em todas as Views do controller Home)
-   - ./Src/js/Home([Nome da View]())/Index(Nome da Action)/*.js (arquivos carregados apenas na view da action Index)
-   - ./Src/js/Home([Nome da View]())/Privacy(Nome da Action)/*.js` (arquivos carregados apenas na view da action)
+   - ./Src/js/Home([Nome da View]())/*.js ([Arquivos carregados em todas as Views do controller Home]())
+   - ./Src/js/Home([Nome da View]())/Index([Nome da Action]())/*.js ([arquivos carregados apenas na view da action Index]())
+   - ./Src/js/Home([Nome da View]())/Privacy([Nome da Action]())/*.js` ([arquivos carregados apenas na view da action]())
 ---
 ```plaintext
 ./Controllers/HomeController.cs
